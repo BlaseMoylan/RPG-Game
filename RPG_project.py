@@ -39,7 +39,7 @@ def run_Game():
     attack(fight_is_over,your_health,ugly_green_dude_health)
     
 def story():
-    print("It was a dark day, that saw Our Great kingdom brought to it's knees. Nature itself was revolting, creatures out of nightmares began to appear upon our sacred land. I remember that day well, though thoughts of our great kingdom's demise never once crossed my mind. For me The Fall all began one early summer morning,the sun was just cresting the nearby hill's when I woke to find a dagger attached to an ugly green arm, desending down upon me. (I must say this, impending death does wonders to get you out of bed in the morning). I quickly twisted the dagger out of the ugly arm's grip, and the fight of my life began... ")
+    print("It was a dark day that saw Our Great kingdom brought to it's knees. Nature itself was revolting, creatures out of nightmares began to appear upon our sacred land. I remember that day well, though thoughts of our great kingdom's demise never once crossed my mind. For me The Fall all began one early summer morning,the sun was just cresting the nearby hill's when I woke to find a dagger attached to an ugly green arm, desending down upon me. (I must say this, impending death does wonders to get you out of bed in the morning). I quickly twisted the dagger out of the ugly arm's grip, and the fight of my life began... ")
 
 def attack(fight_is_over,your_health,ugly_green_dude_health):
     attacks={'slash':5,'stab':15,'punch':1,'kick':2}
@@ -49,8 +49,10 @@ def attack(fight_is_over,your_health,ugly_green_dude_health):
         for item in list_of_attacks:
             if item==player_attack:
                 ugly_green_dude_health=ugly_green_dude_health-attacks[item]
+                print(f'ugly health:{ugly_green_dude_health}')
                 ugly_green_dude_attack=random.randrange(15)
-                your_health=your_health-ugly_green_dude_attack           
+                your_health=your_health-ugly_green_dude_attack 
+                print(f'my health: {your_health}')          
                 if your_health<1:
                     print("I saw it coming but I was helpless to stop it. And so I watched on in horror as the creature's claws tore into my chest, spilling the last of my life blood out onto the cold unforgiving floor. And thus my story ends, for I do not wish to speak of the horror that I have become.")
                     fight_is_over=True
