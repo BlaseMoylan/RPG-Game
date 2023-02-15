@@ -105,12 +105,12 @@ def attack(fight_is_over,your_health,ugly_green_dude_health,crit_chance,block_ch
         num2=random.randrange(100)
         for item in list_of_attacks:
             if item==player_attack:
-                if crit(crit_chance,num):
+                if crit(crit_chance,num)==True:
                     ugly_green_dude_health=ugly_green_dude_health-attacks[item]-crit_damage
                     print('crit')
-                elif 30<num and num<81:
+                elif norm_attack(num,crit_chance,block_chance,dodge_chance,attack_after_dodge)==True:
                     ugly_green_dude_health=ugly_green_dude_health-attacks[item]
-                elif 10<num and num<31:
+                elif block(block_chance,num,dodge_chance,attack_after_dodge)==True:
                     print('blocked')
                 elif num<11:
                     your_health=your_health-ugly_green_dude_attack
@@ -123,9 +123,17 @@ def attack(fight_is_over,your_health,ugly_green_dude_health,crit_chance,block_ch
                     your_health=your_health-ugly_green_dude_attack
                 elif 10<num2 and num2<31:
                     print('got blocked')
-                elif num2<11:
-                    ugly_green_dude_health=ugly_green_dude_health-attacks[item]
-                    print('it missed and you got in a hit')
+                elif dodge(dodge_chance,num,attack_after_dodge)==True:
+                    ran_num=random.randrange(100)
+                    print('you dodged attack!')
+                    if ran_num<26:
+                        print('you have a chance to hit back!')
+                        player_attack=input(f'choose attack option: {attacks}')
+                        rand=random.randrange(100)
+                        for item in list_of_attacks:
+                            if item ==player_attack:
+                                if rand <51:
+                                    ugly_green_dude_health=ugly_green_dude_health-attacks[item]
                 print(f'my health: {your_health}')          
                 # ugly_green_dude_health=ugly_green_dude_health-attacks[item]
                 if your_health<1:
