@@ -30,9 +30,12 @@ import random
 
 # As a developer, I want all of my functions to have a Single Responsibility.
     #  Remember, each function should do just one thing!  
-
+from fighter_classes import Worrior
+#next step is to replace the random ai with the ai worrior build created in the class
 def run_Game():
     #the hud
+    #player_level=1
+    ugly_green_dude_level=1
     ugly_green_dude_health=40
     your_health=25
     fight_is_over=False
