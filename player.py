@@ -8,4 +8,3 @@ class Player(Fighter):
         self.dodge_chance=10
         self.dodge_attack=5
         self.name=''
-        #need to put the list of attacks here

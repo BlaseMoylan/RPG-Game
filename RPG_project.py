@@ -79,21 +79,22 @@ class Game:
                     elif self.player.attack(num)==True:
                         warrior_health=warrior_health-attacks[item]
                     elif self.player.block(num)==True:
-                        print('blocked')
+                        print('got blocked')
                     elif self.player.attack_dodge(num)==True:
                         warrior_health=warrior_health-attacks[item]
                         print('dodged and returned attack!')
-                    print(f'ugly health:{warrior_health}')                
-                    if self.warrior.crit(num2)==True:
-                        self.player.health=self.player.health-warrior-self.warrior.crit_damage
-                        print('took a crit')
-                    elif self.warrior.attack(num2)==True:
-                        self.player.health=self.player.health-warrior
-                    elif self.warrior.block(num2)==True:
-                        print('got blocked')
-                    elif self.warrior.attack_dodge(num2)==True:
-                        self.player.health=self.player.health-warrior
-                        print('you missed and took a hit')
+                    print(f'ugly health:{warrior_health}')
+                    if warrior_health>0:               
+                        if self.warrior.crit(num2)==True:
+                            self.player.health=self.player.health-warrior-self.warrior.crit_damage
+                            print('took a crit')
+                        elif self.warrior.attack(num2)==True:
+                            self.player.health=self.player.health-warrior
+                        elif self.warrior.block(num2)==True:
+                            print('blocked')
+                        elif self.warrior.attack_dodge(num2)==True:
+                            self.player.health=self.player.health-warrior
+                            print('you missed and took a hit')
                     print(f'my health: {self.player.health}')          
                     
                     if self.player.health<1:

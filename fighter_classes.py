@@ -11,5 +11,4 @@ class Warrior(Fighter):
         self.dodge_attack=5
         self.normal_attack=random.randrange(20)
         self.name=''
-        #need a list of attack to choose from automaticly
     

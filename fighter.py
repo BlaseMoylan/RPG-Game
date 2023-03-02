@@ -11,15 +11,15 @@ class Fighter:
     def attack(self,num):
         norm=False
         starting_num=self.dodge_attack+self.dodge_chance+self.block_chance
-        ending_num=101-self.crit_chance
+        ending_num=100-self.crit_chance
         if starting_num<num and num<ending_num:
             norm=True
             return norm
         return norm
     def crit(self,num):
         crit_hit=False
-        self.crit_chance=100-self.crit_chance
-        if num>self.crit_chance:
+        crit_chance=100-self.crit_chance
+        if num>crit_chance:
             crit_hit=True
             return crit_hit
         return crit_hit
