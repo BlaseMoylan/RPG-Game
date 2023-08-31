@@ -2,7 +2,14 @@ import random
 from fighter import Fighter
 #Here I am going to be storing the templates for different AI fighter classes
 class Warrior(Fighter):
+    """
+    This class represents a Warrior AI fighter. It inherits from the Fighter class.
+    It defines attributes and methods for a Warrior fighter type.
+    """
     def __init__(self):
+        """
+        Initializes a Warrior AI fighter instance with default attributes.
+        """
         self.attacks={'slash':10,'stab':15,'shield bash':10,'armored kick':5}
         self.health=50
         self.crit_damage=10
@@ -12,7 +19,11 @@ class Warrior(Fighter):
         self.dodge_attack=5
         self.name=' '
         self.normal_attack=self.random_attack()
+
     def random_attack(self):
+        """
+        Selects a random attack from available attacks and returns its damage value.
+        """
         attacks=self.attacks.keys()
         attack=[]
         for item in attacks:
@@ -24,8 +35,17 @@ class Warrior(Fighter):
         else:
             print(f"{self.name} {normal_attack}'s you!")
         return normal_attack
+    
 class Militia(Fighter):
+    """
+    This class represents a Militia AI fighter. It inherits from the Fighter class.
+    It defines attributes and methods for a Militia fighter type.
+    """
+
     def __init__(self):
+        """
+        Initializes a Militia AI fighter instance with default attributes.
+        """
         self.attacks={'slash':5,'stab':10,'kick':2,'punch':2}
         self.health=25
         self.crit_damage=10
@@ -35,7 +55,11 @@ class Militia(Fighter):
         self.dodge_attack=5
         self.name=''
         self.normal_attack=self.random_attack()
+
     def random_attack(self):
+        """
+        Selects a random attack from available attacks and returns its damage value.
+        """
         attacks=self.attacks.keys()
         attack=[]
         for item in attacks:
