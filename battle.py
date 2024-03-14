@@ -43,6 +43,8 @@ class Battle:
                     print(f'my health: {self.player.health}')          
                     
                     if self.player.health<1:
+                        # need to send the results to the story line and have it continue on from there
+                        #this is just a battle ground class not a storyline class
                         print("I saw it coming but I was helpless to stop it. And so I watched on in horror as the creature's claws tore into my chest, \nspilling the last of my life blood out onto the cold unforgiving floor. \nAnd thus my story ends, for I do not wish to speak of the horror that I have become.")
                         fight_is_over=True
                         self.player_state='dead'
